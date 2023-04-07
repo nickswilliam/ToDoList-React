@@ -24,3 +24,18 @@ export const ButtonUI = styled.button`
         color: #495057;
     }
 `
+
+export const ButtonTransparent = styled.button`
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: #fafafa;
+    cursor: pointer;
+    text-align: center;
+    font-size: 22px;
+
+    &:hover{
+        opacity: 70%;
+    }
+    
+`
