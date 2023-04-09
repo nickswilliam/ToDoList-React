@@ -23,6 +23,11 @@ export const ButtonUI = styled.button`
         background-color: ${({ color }) => (color ? '#212529' : 'rgba(210, 80, 0, 1)')};
         color: #495057;
     }
+
+    @media (max-width: 480px){
+        font-size: 20px;
+        padding: 10px 10px;
+    }
 `
 
 export const ButtonTransparent = styled.button`
