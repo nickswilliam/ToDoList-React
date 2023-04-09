@@ -7,8 +7,13 @@ import { FaTrash } from 'react-icons/fa'
 
 const ToDo = () => {
     const [text, setText] = useState('');
-    const [todoList, setTodoList] = useState([])
-    /* const [idList, setIdList] = useState(1) */
+    const [todoList, setTodoList] = useState(JSON.parse(localStorage.getItem('task')) ||[])
+
+    const saveToLocalStorage = todoList => {
+        localStorage.setItem('task', JSON.stringify(todoList))
+    }
+
+    saveToLocalStorage(todoList)
 
     const handleInput = e => {
         setText(e.target.value)
@@ -28,10 +33,10 @@ const ToDo = () => {
 
         const taskList = [...todoList, todoListTemp]
         setTodoList(taskList);
+        saveToLocalStorage(todoList)
 
 
         setText('')
-        /* setIdList(idList + 1) */
     }
 
     const deleteList = (e) => {
@@ -42,7 +47,7 @@ const ToDo = () => {
 
         if (window.confirm('¿Está seguro que desea eliminar todos los elementos de la lista?')) {
             setTodoList([])
-            /* setIdList(1) */
+            saveToLocalStorage(todoList)
         }
         return;
     }
@@ -55,6 +60,7 @@ const ToDo = () => {
         const taskFilter = todoList.filter(task => task.id != elementId)
 
         setTodoList(taskFilter)
+        saveToLocalStorage(todoList)
     }
 
     return (
