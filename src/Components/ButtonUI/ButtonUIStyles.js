@@ -8,8 +8,9 @@ export const ButtonUI = styled.button`
     cursor: pointer;
     text-align: center;
     padding: 10px 20px;
-    font-size: 22px;
+    font-size: 18px;
     border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
 
     &:hover{
         border: 2px solid ${({ color }) => (color ? 'rgba(235, 0, 80, 0.6)' : 'rgba(210, 90, 0, 0.6)')};
@@ -25,7 +26,6 @@ export const ButtonUI = styled.button`
     }
 
     @media (max-width: 480px){
-        font-size: 20px;
         padding: 10px 10px;
     }
 `

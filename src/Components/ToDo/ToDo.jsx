@@ -45,7 +45,7 @@ const ToDo = () => {
             return;
         }
 
-        if (window.confirm('¿Está seguro que desea eliminar todos los elementos de la lista?')) {
+        if (window.confirm('¿Desea eliminar los elementos de la lista?')) {
             setTodoList([])
             saveToLocalStorage(todoList)
         }
