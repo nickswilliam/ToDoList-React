@@ -27,7 +27,6 @@ export const LiItems = styled.li`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    backdrop-filter: blur(3px);
     box-shadow: -6px 6px 6px #1a0921a1;
 `
 

@@ -3,11 +3,16 @@ import { ButtonTransparent, ButtonUI } from "../ButtonUI/ButtonUIStyles"
 import { InputContainer, InputUI } from "../InputUI/InputStyles"
 import { LiItems, ULContainer } from "../TaskList/TaskListStyles";
 import { FaTrash } from 'react-icons/fa'
+import DeleteAllItems from "../DeleteAllItems/DeleteAllItems";
+import { useFlagContext } from "../../Context/WindowDeleteFlagContext";
 
 
 const ToDo = () => {
     const [text, setText] = useState('');
-    const [todoList, setTodoList] = useState(JSON.parse(localStorage.getItem('task')) ||[])
+    /*     const [todoList, setTodoList] = useState(JSON.parse(localStorage.getItem('task')) ||[]) */
+    const { visible, setVisible, todoList, setTodoList } = useFlagContext();
+
+
 
     const saveToLocalStorage = todoList => {
         localStorage.setItem('task', JSON.stringify(todoList))
@@ -39,16 +44,12 @@ const ToDo = () => {
         setText('')
     }
 
+
     const deleteList = (e) => {
         e.preventDefault();
-        if (!todoList.length) {
-            return;
-        }
+        if (!todoList.length) return;
 
-        if (window.confirm('¿Desea eliminar los elementos de la lista?')) {
-            setTodoList([])
-            saveToLocalStorage(todoList)
-        }
+        setVisible(!visible)
         return;
     }
 
@@ -65,6 +66,7 @@ const ToDo = () => {
 
     return (
         <>
+
             <h1 style={{ textAlign: "center", marginBottom: '30px' }}>ToDo List</h1>
             <InputContainer onSubmit={agregarLista}>
                 <InputUI
@@ -90,7 +92,7 @@ const ToDo = () => {
                         {task.task}
                         <ButtonTransparent className="trashIcon" data-idef={task.id}>
                             <FaTrash
-                                style={{ color: 'rgba(235, 0, 70, 1)', padding: '2px', fontSize: '28px', pointerEvents:'none'}}
+                                style={{ color: 'rgba(235, 0, 70, 1)', padding: '2px', fontSize: '28px', pointerEvents: 'none' }}
                             />
                         </ButtonTransparent>
 
@@ -99,7 +101,7 @@ const ToDo = () => {
                 ))}
 
             </ULContainer>
-
+            <DeleteAllItems show={visible} />
         </>
     )
 }

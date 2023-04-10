@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const ButtonUI = styled.button`
-    border: 2px solid ${({ color }) => (color ? 'rgba(235, 0, 80, 1)' : 'rgba(210, 90, 0, 1)')};
-    background-color: ${({ color }) => (color ? 'rgba(235, 0, 70, 1)' : 'rgba(210, 80, 0, 1)')};
+    border: 2px solid ${({ color, dif }) => (color ? 'rgba(235, 0, 80, 1)' : dif ? 'rgba(20, 60, 200, 1)' : 'rgba(210, 90, 0, 1)')};
+    background-color: ${({ color, dif }) => (color ? 'rgba(235, 0, 70, 1)' : dif ? 'rgba(20, 60, 200, 1)' : 'rgba(210, 80, 0, 1)')};
     outline: none;
     color: #fafafa;
     cursor: pointer;
@@ -13,8 +13,8 @@ export const ButtonUI = styled.button`
     font-family: 'Poppins', sans-serif;
 
     &:hover{
-        border: 2px solid ${({ color }) => (color ? 'rgba(235, 0, 80, 0.6)' : 'rgba(210, 90, 0, 0.6)')};
-        background-color: ${({ color }) => (color ? 'rgba(235, 0, 70, 0.6)' : 'rgba(210, 80, 0, 0.6)')};
+        border: 2px solid ${({ color, dif }) => (color ? 'rgba(235, 0, 80, 0.6)' : dif ? 'rgba(20, 60, 200, 0.6)' : 'rgba(210, 90, 0, 0.6)')};
+        background-color: ${({ color, dif }) => (color ? 'rgba(235, 0, 70, 0.6)' : dif ? 'rgba(20, 60, 200, 0.6)' : 'rgba(210, 80, 0, 0.6)')};
         color: #fafafaa1;
     }
 
@@ -40,7 +40,7 @@ export const ButtonTransparent = styled.button`
     font-size: 22px;
 
     &:hover{
-        opacity: 70%;
+        opacity: 60%;
     }
     
 `

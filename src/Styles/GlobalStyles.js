@@ -17,5 +17,6 @@ export const GlobalStyles = createGlobalStyle`
         justify-content: center;
         gap: 20px;
         margin-top: 80px;
+        width: 100%;
     }
 `
