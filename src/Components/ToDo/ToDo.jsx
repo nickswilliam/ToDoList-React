@@ -9,11 +9,8 @@ import { useFlagContext } from "../../Context/WindowDeleteFlagContext";
 
 const ToDo = () => {
     const [text, setText] = useState('');
-    /*     const [todoList, setTodoList] = useState(JSON.parse(localStorage.getItem('task')) ||[]) */
     const { visible, setVisible, todoList, setTodoList } = useFlagContext();
-
-
-
+    
     const saveToLocalStorage = todoList => {
         localStorage.setItem('task', JSON.stringify(todoList))
     }

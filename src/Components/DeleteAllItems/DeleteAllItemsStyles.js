@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const DivBlur = styled.div`
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;  
     background-color: rgba(13,14,15, 0.7);
@@ -14,7 +14,7 @@ export const DivBlur = styled.div`
     justify-content: center;
     visibility: ${({ show }) => (show ? 'hidden' : 'visible')};
     transform: scale(${({ show }) => (show? '0' : '1')});
-    transition: all 0.08s ease;
+    transition: all 0.06s ease;
 `
 
 export const WindowToDelete = styled.div`

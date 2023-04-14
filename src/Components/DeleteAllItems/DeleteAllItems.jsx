@@ -33,9 +33,9 @@ const DeleteAllItems = ({ show }) => {
             <DivBlur show={show} onClick={clickOutBox}>
                 <WindowToDelete className="windowDelete">
                     <ButtonTransparent style={{ alignSelf: 'flex-end', cursor: "pointer" }}
-                        onClick={closeWindow}>
-                        <AiOutlineClose size='24px'
-                        />
+                        onClick={closeWindow}
+                    >
+                        <AiOutlineClose size='24px'/>
                     </ButtonTransparent>
                     <h2 style={{ fontWeight: 400 }}>¿Desea eliminar todos los Elementos?</h2>
 
